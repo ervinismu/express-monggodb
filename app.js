@@ -7,7 +7,7 @@ const app = express();
 // ──── CONNECT TO MONGGODB ─────────────────────────────────────────────────────
 const db = require('./config/key').mongoURI;
 
-var connected = 'ass'
+var connected = null
 
 mongoose
   .connect(db)
@@ -18,7 +18,7 @@ mongoose
   .catch(err => {
     // console.log(err);
     connected = 'MongoDB Not Connected'
-    // console.log('MongoDB Not Connected');
+    console.log('MongoDB Not Connected');
   });
 
 //
