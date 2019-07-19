@@ -7,14 +7,18 @@ const app = express();
 // ──── CONNECT TO MONGGODB ─────────────────────────────────────────────────────
 const db = require('./config/key').mongoURI;
 
+var connected = 'ass'
+
 mongoose
   .connect(db)
   .then(() => {
-    console.log('MongoDB Connected');
+    connected = 'MongoDB Connected'
+    // console.log('MongoDB Connected');
   })
   .catch(err => {
-    console.log(err);
-    console.log('MongoDB Not Connected');
+    // console.log(err);
+    connected = 'MongoDB Not Connected'
+    // console.log('MongoDB Not Connected');
   });
 
 //
@@ -25,7 +29,8 @@ app.get('/', (req, res) => {
   res.json({
           "Title"     : "Devops",
           "Message"   : "Hello world!",
-          "Time"      : dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
+          "Time"      : dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT"),
+          "Database"  : connected
         });
 });
 
