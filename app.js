@@ -25,6 +25,13 @@ mongoose
 // ─── ROUTES ─────────────────────────────────────────────────────────────────────
 //
 app.get('/', (req, res) => {
+
+  const con = mongoose.connection;
+  const workshop = {
+    title: 'Devops Workshop #1'
+  };
+  con.collection('workshop').insert(workshop);
+
   const now = new Date();
   res.json({
           "Title"     : "Devops",
