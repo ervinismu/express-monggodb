@@ -1,5 +1,5 @@
 # express-monggodb
-Expressjs with monggodb database.
+Expressjs with monggodb database. Simple app for devops workshop.
 
 ## Env
   * nodejs v8.10.0
